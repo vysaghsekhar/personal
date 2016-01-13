@@ -1,4 +1,82 @@
-<html>
-<title>V</title>
-Vysagh sekhar portfolio
+<!DOCTYPE html>
+<html class=no-js>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+
+<head>
+	<meta charset=utf-8>
+	<meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+	<title>Vysagh Sekhar</title>
+	<meta name=description content="My focus and strengths are in designing user interfaces that are above all usable but also
+engaging, accessible and easily built to bond to design standards. Common sense,
+an observing eye, a listening ear and an open mind are part of my toolbox.">
+	<meta name=viewport content="initial-scale=1, user-scalable=no, minimal-ui">
+	<link rel=stylesheet href=css/styles.css>
+	<link href='https://fonts.googleapis.com/css?family=Quicksand:400,300,700' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+	<div class=container>
+		<div class=info><a href="#">Connect Me</a></div>
+		<div class=rotate>
+			<div class=rotate__faces>
+				<div class=rotate__face--front>
+					<h1 class=logo>vysagh.me</h1>
+					<div class=connect>
+						<h3>this will be<br/><span>vysagh sekhar’s</span><br/>future play ground</h3>
+						
+					</div>
+				</div>
+				<div class=rotate__face--side>
+					<div class="avatar"><a href="https://about.me/vysaghsekhar" target="blank"></a></div>
+					<p class=body>My focus and strengths are in designing user interfaces that are above all usable but also
+engaging, accessible and easily built to bond to design standards. Common sense,
+an observing eye, a listening ear and an open mind are part of my toolbox.</p>
+					<div class="behance"><a href="https://www.behance.net/vysagh" target="blank"></a></div>
+					
+				</div>
+			</div>
+		</div>
+		</div>
+	</div>
+	<script src=js/vendor.js></script>
+	<script>
+		function has3d() {
+			var el = document.createElement('p'),
+				has3d,
+				transforms = {
+					'webkitTransform': '-webkit-transform',
+					'OTransform': '-o-transform',
+					'msTransform': '-ms-transform',
+					'MozTransform': '-moz-transform',
+					'transform': 'transform'
+				};
+
+			// Add it to the body to get the computed style.
+			document.body.insertBefore(el, null);
+
+			for (var t in transforms) {
+				if (el.style[t] !== undefined) {
+					el.style[t] = "translate3d(1px,1px,1px)";
+					has3d = window.getComputedStyle(el).getPropertyValue(transforms[t]);
+				}
+			}
+
+			document.body.removeChild(el);
+			return (has3d !== undefined && has3d.length > 0 && has3d !== "none");
+		}
+		is3d = has3d();
+
+		$(document).ready(function() {
+			if (is3d) {
+				$('html').addClass('csstransforms3d');
+			}
+			$('.info').click(function() {
+				$('.rotate__faces, .info').toggleClass('is--turned');
+			});
+		});
+
+		
+	</script>
+</body>
+
 </html>
